@@ -10,6 +10,7 @@
    --mdyo-dark-blue: #003366;
    --white: #fff;
    --yellow-orange: #ffcc66;
+   --arial-font: arial;
 }
 
 /* border component */
@@ -44,7 +45,7 @@ li {
 a {
    margin-right: 3rem;
    font-size: 18px;
-   font-family: arial;
+   font-family: var(--arial-font);
    text-decoration: none;
    color: var(--white);
 }
@@ -52,4 +53,16 @@ a {
 a:hover {
    color: var(--yellow-orange);
 }
+
+/* about paragraph */
+.about {
+   font-family: var(--arial-font);
+   font-size: 25px;
+   width: 40%;
+   margin: 0 auto;
+   text-align: justify;
+
+   margin-top: 4rem;
+}
+
 /* header */
