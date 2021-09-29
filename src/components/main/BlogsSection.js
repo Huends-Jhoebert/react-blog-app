@@ -35,6 +35,11 @@ const BlogsSection = () => {
       }
    }, [clicked]);
 
+   const remove = (id) => {
+      const updatedPosts = posts.filter((post) => post.id !== id);
+      setPosts(updatedPosts);
+   };
+
    return (
       <section className="blogsSection">
          <h1>Blog</h1>
@@ -57,13 +62,19 @@ const BlogsSection = () => {
                      // className="justify-content-center"
                      style={{ marginBottom: "2rem" }}
                   >
-                     <MDBCard alignment="center" style={{ maxWidth: "22rem" }}>
+                     <MDBCard
+                        alignment="center"
+                        className="shadow-4"
+                        style={{ maxWidth: "22rem" }}
+                     >
                         <MDBCardHeader>POST</MDBCardHeader>
                         <MDBCardBody>
                            <MDBCardTitle>{title}</MDBCardTitle>
                            <MDBCardText>{body}</MDBCardText>
                            <div className="text-center">
-                              <MDBBtn color="danger">Delete</MDBBtn>
+                              <MDBBtn color="danger" onClick={() => remove(id)}>
+                                 Delete
+                              </MDBBtn>
                            </div>
                         </MDBCardBody>
                         <MDBCardFooter className="text-muted">
