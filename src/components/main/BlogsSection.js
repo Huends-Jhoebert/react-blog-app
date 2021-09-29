@@ -48,7 +48,8 @@ const BlogsSection = () => {
                color="primary"
                onClick={() => setClicked((prev) => prev + 1)}
             >
-               <i className="fas fa-boxes"></i> Fetch
+               <i className="fas fa-boxes" style={{ marginRight: ".6rem" }}></i>{" "}
+               Fetch
             </MDBBtn>
          </div>
          <MDBRow className="d-flex justify-content-center mt-5">
@@ -73,6 +74,10 @@ const BlogsSection = () => {
                            <MDBCardText>{body}</MDBCardText>
                            <div className="text-center">
                               <MDBBtn color="danger" onClick={() => remove(id)}>
+                                 <i
+                                    className="fas fa-trash"
+                                    style={{ marginRight: ".6rem" }}
+                                 ></i>{" "}
                                  Delete
                               </MDBBtn>
                            </div>
