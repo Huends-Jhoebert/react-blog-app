@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from "react";
+import {
+   MDBBtn,
+   MDBContainer,
+   MDBRow,
+   MDBCol,
+   MDBCard,
+   MDBCardBody,
+   MDBCardTitle,
+   MDBCardText,
+   MDBCardHeader,
+   MDBCardFooter,
+} from "mdb-react-ui-kit";
 
 const BlogsSection = () => {
    const [posts, setPosts] = useState([]);
+
+   const [clicked, setClicked] = useState(0);
 
    const getPosts = async () => {
       try {
@@ -16,25 +30,50 @@ const BlogsSection = () => {
    };
 
    useEffect(() => {
-      getPosts();
-   }, []);
-
-   console.log(posts);
+      if (clicked == 1) {
+         getPosts();
+      }
+   }, [clicked]);
 
    return (
       <section className="blogsSection">
          <h1>Blog</h1>
-         <div class="game-board">
+         <div className="text-center">
+            <MDBBtn
+               color="primary"
+               onClick={() => setClicked((prev) => prev + 1)}
+            >
+               <i className="fas fa-boxes"></i> Fetch
+            </MDBBtn>
+         </div>
+         <MDBRow className="d-flex justify-content-center mt-5">
             {posts.map((post) => {
+               const randomNumber = Math.floor(Math.random() * 10) + 1;
                const { id, title, body } = post;
                return (
-                  <div class="box" key={id}>
-                     <p>{title}</p>
-                     <p>{body}</p>
-                  </div>
+                  <MDBCol
+                     key={id}
+                     size="4"
+                     // className="justify-content-center"
+                     style={{ marginBottom: "2rem" }}
+                  >
+                     <MDBCard alignment="center" style={{ maxWidth: "22rem" }}>
+                        <MDBCardHeader>POST</MDBCardHeader>
+                        <MDBCardBody>
+                           <MDBCardTitle>{title}</MDBCardTitle>
+                           <MDBCardText>{body}</MDBCardText>
+                           <div className="text-center">
+                              <MDBBtn color="danger">Delete</MDBBtn>
+                           </div>
+                        </MDBCardBody>
+                        <MDBCardFooter className="text-muted">
+                           {randomNumber} days ago
+                        </MDBCardFooter>
+                     </MDBCard>
+                  </MDBCol>
                );
             })}
-         </div>
+         </MDBRow>
       </section>
    );
 };

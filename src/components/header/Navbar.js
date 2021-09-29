@@ -6,13 +6,18 @@ const Navbar = () => {
          <p className="logo">HuenDs</p>
          <ul>
             <li>
-               <a href="#">About</a>
+               <a href="#" style={{ color: "#fff" }}>
+                  About
+               </a>
             </li>
             <li>
-               <a href="#">Blogs</a>
+               <a href="#" style={{ color: "#fff" }}>
+                  Blogs
+               </a>
             </li>
             <li>
                <a
+                  style={{ color: "#fff" }}
                   href="https://github.com/Huends-Jhoebert/react-blog-app"
                   target="_blank"
                >

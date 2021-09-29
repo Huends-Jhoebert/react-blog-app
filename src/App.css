@@ -21,7 +21,7 @@
 /* header */
 nav {
    /* nav */
-   padding: 1rem;
+   padding: 0.7rem 0.7rem 0.3rem 0.7rem;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -47,10 +47,9 @@ a {
    font-size: 18px;
    font-family: var(--arial-font);
    text-decoration: none;
-   color: var(--white);
 }
 
-a:hover {
+nav a:hover {
    color: var(--yellow-orange);
 }
 
@@ -61,7 +60,6 @@ a:hover {
    width: 40%;
    margin: 0 auto;
    text-align: justify;
-
    margin-top: 4rem;
 }
 
@@ -76,27 +74,10 @@ a:hover {
 }
 
 .blogsSection h1 {
-   margin: 1rem 0 2rem 0;
+   margin: 1rem 0 1rem 0;
    text-align: center;
    font-size: 2rem;
    color: var(--mdyo-light-blue);
-}
-
-.game-board {
-   font-family: var(--arial-font);
-   margin-top: 1rem;
-   display: grid;
-   grid-template-rows: auto;
-   grid-template-columns: repeat(3, 300px);
-   justify-content: center;
-   grid-gap: 4rem;
-}
-
-.box {
-   padding: 1rem;
-   text-align: justify;
-   border: 1px solid var(--mdyo-dark-blue);
-   color: #000;
 }
 
 /* Main */
