@@ -7,7 +7,7 @@ const Header = () => {
          <Navbar />
          <p className="about">
             This is my simple personal project and at the same time I made this
-            because of practicing some react js concepts. You can add some
+            because of practicing some basic react js concepts. You can add some
             features or more, just clone it at its repo.
          </p>
       </header>
